@@ -1,0 +1,71 @@
+<p>hello works!</p>
+
+<span>{{name}}</span>
+<p>false?name:2+3==>{{false?name:2+3}}</p>
+<span>Date ===>{{date}}</span>
+<br>
+-------------------------------------------------------------------------
+<div [id]="'ng_div'">屬性綁定</div>
+<br>
+-------------------------------------------------------------------------
+<!--class渲染-->
+<p [class]="ng_class">class屬性綁定</p>
+<h3 [class.h3-dom]="ng_h3">hell0{{2+3}}</h3>
+<h3 [class]="ng_multipClass">多類名稱綁定</h3>
+<h3 [class]="{'h3-dom':true,'title-dom':false}">類名條件渲染</h3>
+<h3 [ngClass]="{'active':isActive}">ngclass綁定</h3>
+
+<h3 [class]="['h3-dom','title-dom']">數組渲染</h3>
+<br>
+-------------------------------------------------------------------------
+<!--樣式綁定-->
+<h3 [style.width]="'400px'">單一樣式綁定</h3>
+<h3 [style.color]="'red'">單一樣式綁定2</h3>
+<h3 [style.width.px]="'600'">單一樣式綁定</h3>
+<h3 [style]="'background:blue;color:white'">多樣式綁定</h3>
+<h3 [style]="{'background':'blue','color':'white'}">多樣式綁定</h3>
+<h3 [ngStyle]="{'background':'blue','color':'white'}">ngStyle樣式綁定</h3>
+<h3 [ngStyle]="{'font-size': size? '23px':'50px'}" >ngStyle樣式綁定</h3>
+
+<br>
+-------------------------------------------------------------------------
+
+<div *ngIf="ng_ifDiv"> ng_ifDiv</div>
+
+<ng-container *ngIf="ng_ifDiv; else elseTemplate">
+  <div> 出來啦</div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div> ELSE</div>
+
+</ng-template>
+
+<!--循環語句-->
+<br>
+-------------------------------------------------------------------------
+<div *ngFor="let item of colors let i=index let odd=odd">
+{{item}}
+{{i}}
+{{odd}}
+</div>
+
+<!--switch-->
+<br>
+-------------------------------------------------------------------------
+<div [ngSwitch]="type">
+<p *ngSwitchCase="2">
+  type = 2
+</p>
+<p *ngSwitchCase="1">
+  type = 1
+
+</p>
+<p *ngSwitchCase="3">
+  type = 3
+
+</p>
+<p *ngSwitchDefault>
+  type = ???
+
+</p>
+</div>

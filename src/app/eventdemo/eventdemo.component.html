@@ -1,0 +1,8 @@
+<!-- 事件綁定 -->
+<button (click)="clickfunction($event)">按下去</button>
+<input #userName type="text" (input)="inputchang($event)" name="input1" id="input2">
+<button (click)="getuserName(userName.value)" >獲取{{username}}</button>
+<hr>
+<!-- 雙向繫結 -->
+<input [(ngModel)]="username2" type="text">
+<p>變量==>{{username2}}</p>
